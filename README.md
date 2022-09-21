@@ -1,1 +1,2 @@
-# info2022
+# Repo for homeworks
+by **Ekaterina Zalivina**
