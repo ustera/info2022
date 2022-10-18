@@ -1,6 +1,7 @@
 import streamlit as st
 from import_data import import_files, import_bert
 from request_processing import request_search_bert, create_output, search_similar, request_search_bm25, request_search_tfidf
+from nltk.corpus import stopwords
 import time
 import base64
 
@@ -26,8 +27,9 @@ def set_bg(png_file):
 
 def search():
     st.set_page_config(page_title="Поисковик", page_icon=":love_letter:", layout="centered")
-    texts, vectorizer, bert_matrix_answers, matrix_bm25, morph, stoplist, matrix_tfidf, vectorizer_tfidf = import_files()
+    texts, vectorizer, bert_matrix_answers, matrix_bm25, morph, matrix_tfidf, vectorizer_tfidf = import_files()
     tokenizer, model = import_bert()
+    stoplist = stopwords.words('russian')
     st.title(":love_letter: (Не) очень романтичный поисковик")
     set_bg('bg.png')
     with st.expander("Как пользоваться"):
