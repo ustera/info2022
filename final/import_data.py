@@ -8,7 +8,7 @@ import streamlit as st
 @st.cache(show_spinner=False, allow_output_mutation=True)
 def import_files():
     """ Gets the path to the .jsonl file. Returns a dictionary with question and answers from them """
-    texts = json.load(open("./data/texts_sample.txt"))
+    texts = json.load(open(".data/texts_sample.txt"))
     with open('data/vectorizer.pickle', 'rb') as pkl:
         vectorizer = pickle.load(pkl)
     with open('data/bert_matrix.pickle', 'rb') as pkl:
