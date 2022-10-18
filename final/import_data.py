@@ -9,15 +9,15 @@ import streamlit as st
 def import_files():
     """ Gets the path to the .jsonl file. Returns a dictionary with question and answers from them """
     texts = json.load(open("/app/info2022/final/data/texts_sample.txt"))
-    with open('data/vectorizer.pickle', 'rb') as pkl:
+    with open('/app/info2022/final/data/vectorizer.pickle', 'rb') as pkl:
         vectorizer = pickle.load(pkl)
-    with open('data/bert_matrix.pickle', 'rb') as pkl:
+    with open('/app/info2022/final/data/bert_matrix.pickle', 'rb') as pkl:
         bert_matrix_answers = pickle.load(pkl)
-    with open('data/matrix_bm25.pickle', 'rb') as pkl:
+    with open('/app/info2022/final/data/matrix_bm25.pickle', 'rb') as pkl:
         matrix_bm25 = pickle.load(pkl)
-    with open('data/matrix_tfidf.pickle', 'rb') as pkl:
+    with open('/app/info2022/final/data/matrix_tfidf.pickle', 'rb') as pkl:
         matrix_tfidf = pickle.load(pkl)
-    with open('data/vectorizer_tfidf.pickle', 'rb') as pkl:
+    with open('/app/info2022/final/data/vectorizer_tfidf.pickle', 'rb') as pkl:
         vectorizer_tfidf = pickle.load(pkl)
     morph = pymorphy2.MorphAnalyzer()
     return texts, vectorizer, bert_matrix_answers, matrix_bm25, morph, matrix_tfidf, vectorizer_tfidf
